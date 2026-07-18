@@ -76,10 +76,27 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
-      <h1 className="text-xl font-semibold mb-4 text-gray-800">Dot Grid</h1>
+      <h1 className="text-xl font-semibold mb-4 text-gray-800">Chord Builder</h1>
 
       {/* Profile switcher */}
       <div className="flex flex-wrap items-center gap-2 mb-4">
+        
+
+        <input
+          type="text"
+          value={newProfileName}
+          onChange={(e) => setNewProfileName(e.target.value)}
+          placeholder="New Chord Name"
+          className="border border-gray-300 rounded-md px-2 py-1 text-sm"
+        />
+        <button
+          onClick={createProfile}
+          className="px-3 py-1 rounded-md bg-blue-500 text-white text-sm"
+        >
+          Add
+        </button>
+      <p className="text-xl font-semibold mb-4 text-gray-800">Current chord</p>
+
         <select
           value={currentProfile}
           onChange={(e) => setCurrentProfile(e.target.value)}
@@ -91,20 +108,6 @@ function App() {
             </option>
           ))}
         </select>
-
-        <input
-          type="text"
-          value={newProfileName}
-          onChange={(e) => setNewProfileName(e.target.value)}
-          placeholder="New profile name"
-          className="border border-gray-300 rounded-md px-2 py-1 text-sm"
-        />
-        <button
-          onClick={createProfile}
-          className="px-3 py-1 rounded-md bg-blue-500 text-white text-sm"
-        >
-          Add
-        </button>
         <button
           onClick={deleteProfile}
           className="px-3 py-1 rounded-md bg-red-500 text-white text-sm"
